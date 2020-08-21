@@ -1,9 +1,11 @@
 import React from "react";
+import LandingSec from "./landingSec";
+import "../../assets/css/home.css";
 
 const Home = () => {
   return (
     <div>
-      <h1>hamzah</h1>
+      <LandingSec />
     </div>
   );
 };
