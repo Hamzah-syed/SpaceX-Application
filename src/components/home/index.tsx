@@ -5,10 +5,13 @@ import "../../assets/css/home.css";
 //query
 import { useCompanyInfoQuery } from "../../generated/graphql";
 
-const Home = () => {
+const Home: React.FC = () => {
   const { data, loading, error } = useCompanyInfoQuery();
   if (loading) {
     return <h1>loading</h1>;
+  }
+  if (error || !data) {
+    return <h1>error</h1>;
   }
   return (
     <div>

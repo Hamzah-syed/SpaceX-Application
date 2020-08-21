@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //pages
 import Home from "./components/home";
+import Page404 from "./components/404.tsx";
 //layout
 import Header from "./components/layout/header";
 
@@ -12,6 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="*" element={<Page404 />}></Route>
         </Routes>
       </Router>
     </div>
