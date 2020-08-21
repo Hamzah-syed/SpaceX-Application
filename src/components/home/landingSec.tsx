@@ -3,26 +3,31 @@ import MainImage from "../../assets/images/homeLanding.png";
 //semantic ui
 
 //data
-import { useQuery } from "react-apollo";
-// import { companyInfo } from "./query";
+interface props {
+  summary: string | null | undefined;
+}
 
-const LandingSec = () => {
-  // const { data } = useQuery(companyInfo);
-  // console.log(data);
+const LandingSec: React.FC<props> = ({ summary }) => {
   return (
     <div>
       <div className="HomelandingSec">
-        <div className="centerContent verticalCenter">
-          <div>
-            <div>
-              <div className="customContainer">
-                <h1 className="mainHeader">Space X</h1>
-                <p className="paragraph mainParagraph">
-                  hamzah some asjdkg asjkdhasjkhd jkashdjk ashj dhasjk hdasjkh
-                  djkash{" "}
-                </p>
-                <button className="primaryGradientBtn">Primary</button>
-              </div>
+        <div className="customContainer  w-full h-full flex justify-center items-center">
+          <div className="grid  grid-cols-1">
+            <div className="py-3">
+              <h1 className="font-semibold mainHeader text-center py-2">
+                Space X
+              </h1>
+              <p
+                className="text-xl text-gray-300 text-center "
+                style={{ maxWidth: "900px" }}
+              >
+                {summary}
+              </p>
+            </div>
+            <div className="flex justify-center my-6">
+              <button className="primaryGradientBtn py-2 px-6 font-semibold">
+                Primary
+              </button>
             </div>
           </div>
         </div>

@@ -744,6 +744,30 @@ export type CompanyInfoQuery = (
   )> }
 );
 
+export type MissionNamesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MissionNamesQuery = (
+  { __typename?: 'Query' }
+  & { missions?: Maybe<Array<Maybe<(
+    { __typename?: 'Mission' }
+    & Pick<Mission, 'mission_name' | 'mission_id'>
+  )>>> }
+);
+
+export type MissiondetailsQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type MissiondetailsQuery = (
+  { __typename?: 'Query' }
+  & { mission?: Maybe<(
+    { __typename?: 'Mission' }
+    & Pick<Mission, 'mission_name' | 'twitter' | 'website' | 'wikipedia' | 'description'>
+  )> }
+);
+
 
 export const CompanyInfoDocument = gql`
     query companyInfo {
@@ -777,3 +801,73 @@ export function useCompanyInfoLazyQuery(baseOptions?: Apollo.LazyQueryHookOption
 export type CompanyInfoQueryHookResult = ReturnType<typeof useCompanyInfoQuery>;
 export type CompanyInfoLazyQueryHookResult = ReturnType<typeof useCompanyInfoLazyQuery>;
 export type CompanyInfoQueryResult = Apollo.QueryResult<CompanyInfoQuery, CompanyInfoQueryVariables>;
+export const MissionNamesDocument = gql`
+    query missionNames {
+  missions {
+    mission_name
+    mission_id
+  }
+}
+    `;
+
+/**
+ * __useMissionNamesQuery__
+ *
+ * To run a query within a React component, call `useMissionNamesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMissionNamesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMissionNamesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useMissionNamesQuery(baseOptions?: Apollo.QueryHookOptions<MissionNamesQuery, MissionNamesQueryVariables>) {
+        return Apollo.useQuery<MissionNamesQuery, MissionNamesQueryVariables>(MissionNamesDocument, baseOptions);
+      }
+export function useMissionNamesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MissionNamesQuery, MissionNamesQueryVariables>) {
+          return Apollo.useLazyQuery<MissionNamesQuery, MissionNamesQueryVariables>(MissionNamesDocument, baseOptions);
+        }
+export type MissionNamesQueryHookResult = ReturnType<typeof useMissionNamesQuery>;
+export type MissionNamesLazyQueryHookResult = ReturnType<typeof useMissionNamesLazyQuery>;
+export type MissionNamesQueryResult = Apollo.QueryResult<MissionNamesQuery, MissionNamesQueryVariables>;
+export const MissiondetailsDocument = gql`
+    query missiondetails($id: String!) {
+  mission(id: $id) {
+    mission_name
+    twitter
+    website
+    wikipedia
+    description
+  }
+}
+    `;
+
+/**
+ * __useMissiondetailsQuery__
+ *
+ * To run a query within a React component, call `useMissiondetailsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMissiondetailsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMissiondetailsQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useMissiondetailsQuery(baseOptions?: Apollo.QueryHookOptions<MissiondetailsQuery, MissiondetailsQueryVariables>) {
+        return Apollo.useQuery<MissiondetailsQuery, MissiondetailsQueryVariables>(MissiondetailsDocument, baseOptions);
+      }
+export function useMissiondetailsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MissiondetailsQuery, MissiondetailsQueryVariables>) {
+          return Apollo.useLazyQuery<MissiondetailsQuery, MissiondetailsQueryVariables>(MissiondetailsDocument, baseOptions);
+        }
+export type MissiondetailsQueryHookResult = ReturnType<typeof useMissiondetailsQuery>;
+export type MissiondetailsLazyQueryHookResult = ReturnType<typeof useMissiondetailsLazyQuery>;
+export type MissiondetailsQueryResult = Apollo.QueryResult<MissiondetailsQuery, MissiondetailsQueryVariables>;
