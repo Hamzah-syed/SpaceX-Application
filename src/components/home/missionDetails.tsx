@@ -33,6 +33,7 @@ const Mission: React.FC<props> = ({ missionId }) => {
         <div className="pr-2 rounded-full  cursor-pointer">
           <a
             href={`${data?.mission?.twitter}`}
+            target="_blank"
             className="text-indigo-600  hover:text-indigo-700 hover:underline transition duration-500 ease-in-out"
           >
             Twitter
@@ -42,6 +43,7 @@ const Mission: React.FC<props> = ({ missionId }) => {
         <div className=" pr-2 rounded-full  cursor-pointer">
           <a
             href={`${data?.mission?.wikipedia}`}
+            target="_blank"
             className="text-indigo-600  hover:text-indigo-700 hover:underline transition duration-500 ease-in-out"
           >
             Wikipedia

@@ -38,7 +38,9 @@ const Missions = () => {
         </div>
         <div
           className="grid grid-cols-5  shadow-2xl"
-          style={{ boxShadow: " 0px 0px 5px 12px rgba(0,0,0,0.05" }}
+          style={{
+            boxShadow: " 5px 5px 50px 5px #000000",
+          }}
         >
           <div className="col-span-1  black">
             {!!data &&
@@ -47,7 +49,7 @@ const Missions = () => {
                   !!missionName && (
                     <div
                       key={missionName?.mission_id}
-                      className={`py-3 pl-4  pr-1 text-white cursor-pointer missionBtns  ${
+                      className={`py-3 pl-6  pr-1 text-white cursor-pointer missionBtns  ${
                         active === i ? ActiveClass : ""
                       }`}
                       onClick={() => {
