@@ -59,3 +59,15 @@ body {
 .mainParagraph {
   font-size: 20px;
 }
+.headerCurve {
+  clip-path: polygon(0 0, 100% 0, 72% 100%, 0% 100%);
+  z-index: -10;
+  background-image: linear-gradient(
+    to right top,
+    #3135ac,
+    #4634c3,
+    #5e30d8,
+    #7925ed,
+    #9600ff
+  ) !important;
+}

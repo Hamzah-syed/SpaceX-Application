@@ -15,7 +15,7 @@ const Missions = () => {
         ?.filter((e, i) => i === 0)
         .map((e) => e?.mission_id);
       let [missId] = initialMissionData;
-      //putting id of initial mission   
+      //putting id of initial mission
       setMissionId(missId);
     }
   }, [loading]);
@@ -32,6 +32,10 @@ const Missions = () => {
   return (
     <div>
       <div className="customContainer sectionPadding">
+        <div className="pb-16">
+          <div className="headerCurve absolute w-24 h-12 bg-indigo-200 "></div>
+          <h1 className="text-white font-bold text-3xl  mx-4">Missions</h1>
+        </div>
         <div
           className="grid grid-cols-5  shadow-2xl"
           style={{ boxShadow: " 0px 0px 5px 12px rgba(0,0,0,0.05" }}
