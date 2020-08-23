@@ -20,6 +20,7 @@ const LandingSec: React.FC<props> = ({ summary }) => {
               <p
                 className="text-xl text-gray-300 text-center "
                 style={{ maxWidth: "900px" }}
+                id="summary"
               >
                 {summary}
               </p>

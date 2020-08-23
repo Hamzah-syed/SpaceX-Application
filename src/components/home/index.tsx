@@ -16,7 +16,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div>
+    <div id="comp">
       <LandingSec summary={data?.info?.summary} />
       <Missions />
     </div>
