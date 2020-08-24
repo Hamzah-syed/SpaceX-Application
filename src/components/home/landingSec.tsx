@@ -1,5 +1,5 @@
 import React from "react";
-import MainImage from "../../assets/images/homeLanding.png";
+
 //semantic ui
 
 //data
@@ -10,7 +10,7 @@ interface props {
 const LandingSec: React.FC<props> = ({ summary }) => {
   return (
     <div>
-      <div className="HomelandingSec">
+      <div className=" h-screen landingSec ">
         <div className="customContainer  w-full h-full flex justify-center items-center">
           <div className="grid  grid-cols-1">
             <div className="py-3">

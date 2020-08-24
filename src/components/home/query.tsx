@@ -31,6 +31,7 @@ export const missionDetails = gql`
 export const rockets = gql`
   query rockets {
     rockets {
+      id
       rocket_name
       description
       wikipedia

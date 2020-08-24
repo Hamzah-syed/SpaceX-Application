@@ -17,6 +17,9 @@ const Mission: React.FC<props> = ({ missionId }) => {
   if (loading) {
     return <MissionLoader />;
   }
+  if (error) {
+    return <h1 className="text-red-600">Error</h1>;
+  }
   return (
     <div>
       <div>
@@ -36,6 +39,7 @@ const Mission: React.FC<props> = ({ missionId }) => {
           <a
             href={`${data?.mission?.twitter}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="text-indigo-600  hover:text-indigo-800 hover:underline transition duration-500 ease-in-out"
           >
             Twitter
@@ -46,6 +50,7 @@ const Mission: React.FC<props> = ({ missionId }) => {
           <a
             href={`${data?.mission?.wikipedia}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="text-indigo-600  hover:text-indigo-800 hover:underline transition duration-500 ease-in-out"
           >
             Wikipedia
@@ -57,6 +62,7 @@ const Mission: React.FC<props> = ({ missionId }) => {
         <a
           className="primaryGradientBtn font-semibold py-2  px-6 "
           target="__blank"
+          rel="noopener noreferrer"
           href={`${data?.mission?.website}`}
         >
           Website

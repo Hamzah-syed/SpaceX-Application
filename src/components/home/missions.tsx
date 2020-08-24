@@ -18,7 +18,7 @@ const Missions = () => {
       //putting id of initial mission
       setMissionId(missId);
     }
-  }, [loading]);
+  }, [loading, data]);
   if (loading) {
     return <h1>loading</h1>;
   }
