@@ -26,9 +26,9 @@ const RocketsCards = () => {
     <div>
       <div className="grid grid-cols-12 gap-3">
         {!!data &&
-          data.rockets?.map((rockets, i) => (
+          data.rockets?.map((rockets) => (
             <div
-              key={i}
+              key={rockets?.id}
               className="lg:col-span-3 sm:col-span-6 col-span-12 rounded bg-gray-900"
             >
               <div className="  ">
