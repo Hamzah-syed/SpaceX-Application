@@ -1,4 +1,6 @@
 import React from "react";
+//loader
+import MissionLoader from "../loaders/missionLoader";
 //data
 import { useMissiondetailsQuery } from "../../generated/graphql";
 
@@ -13,7 +15,7 @@ const Mission: React.FC<props> = ({ missionId }) => {
   });
 
   if (loading) {
-    return <h1>loading</h1>;
+    return <MissionLoader />;
   }
   return (
     <div>
@@ -34,7 +36,7 @@ const Mission: React.FC<props> = ({ missionId }) => {
           <a
             href={`${data?.mission?.twitter}`}
             target="_blank"
-            className="text-indigo-600  hover:text-indigo-700 hover:underline transition duration-500 ease-in-out"
+            className="text-indigo-600  hover:text-indigo-800 hover:underline transition duration-500 ease-in-out"
           >
             Twitter
           </a>
@@ -44,7 +46,7 @@ const Mission: React.FC<props> = ({ missionId }) => {
           <a
             href={`${data?.mission?.wikipedia}`}
             target="_blank"
-            className="text-indigo-600  hover:text-indigo-700 hover:underline transition duration-500 ease-in-out"
+            className="text-indigo-600  hover:text-indigo-800 hover:underline transition duration-500 ease-in-out"
           >
             Wikipedia
           </a>

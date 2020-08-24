@@ -26,6 +26,8 @@ const Missions = () => {
   if (error || !data) {
     return <h1>error</h1>;
   }
+
+  console.log(data);
   const ActiveClass =
     "border-r-0 border-b-0 border-t-0 border-l-4 border border-indigo-800 ";
 

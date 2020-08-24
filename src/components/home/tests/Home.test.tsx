@@ -55,19 +55,6 @@ it("should render loading state initially", () => {
   expect(tree.children).toContain("Loading...");
 });
 
-it("should render loading state initially", () => {
-  const component = renderer.create(
-    <MockedProvider mocks={mocks}>
-      <Home />
-    </MockedProvider>
-  );
-
-  const tree: any = component.toJSON();
-  //check what we are getting in tree
-  //   console.log(tree);
-  expect(tree.children).toContain("Loading...");
-});
-
 it("should render summary", async () => {
   const component = renderer.create(
     <MockedProvider mocks={mocks} addTypename={false}>
