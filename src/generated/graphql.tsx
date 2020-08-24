@@ -768,6 +768,17 @@ export type MissiondetailsQuery = (
   )> }
 );
 
+export type RocketsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type RocketsQuery = (
+  { __typename?: 'Query' }
+  & { rockets?: Maybe<Array<Maybe<(
+    { __typename?: 'Rocket' }
+    & Pick<Rocket, 'rocket_name' | 'description' | 'wikipedia' | 'flickr_images'>
+  )>>> }
+);
+
 
 export const CompanyInfoDocument = gql`
     query companyInfo {
@@ -871,3 +882,38 @@ export function useMissiondetailsLazyQuery(baseOptions?: Apollo.LazyQueryHookOpt
 export type MissiondetailsQueryHookResult = ReturnType<typeof useMissiondetailsQuery>;
 export type MissiondetailsLazyQueryHookResult = ReturnType<typeof useMissiondetailsLazyQuery>;
 export type MissiondetailsQueryResult = Apollo.QueryResult<MissiondetailsQuery, MissiondetailsQueryVariables>;
+export const RocketsDocument = gql`
+    query rockets {
+  rockets {
+    rocket_name
+    description
+    wikipedia
+    flickr_images
+  }
+}
+    `;
+
+/**
+ * __useRocketsQuery__
+ *
+ * To run a query within a React component, call `useRocketsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useRocketsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useRocketsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useRocketsQuery(baseOptions?: Apollo.QueryHookOptions<RocketsQuery, RocketsQueryVariables>) {
+        return Apollo.useQuery<RocketsQuery, RocketsQueryVariables>(RocketsDocument, baseOptions);
+      }
+export function useRocketsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RocketsQuery, RocketsQueryVariables>) {
+          return Apollo.useLazyQuery<RocketsQuery, RocketsQueryVariables>(RocketsDocument, baseOptions);
+        }
+export type RocketsQueryHookResult = ReturnType<typeof useRocketsQuery>;
+export type RocketsLazyQueryHookResult = ReturnType<typeof useRocketsLazyQuery>;
+export type RocketsQueryResult = Apollo.QueryResult<RocketsQuery, RocketsQueryVariables>;

@@ -28,3 +28,13 @@ export const missionDetails = gql`
     }
   }
 `;
+export const rockets = gql`
+  query rockets {
+    rockets {
+      rocket_name
+      description
+      wikipedia
+      flickr_images
+    }
+  }
+`;

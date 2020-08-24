@@ -27,7 +27,6 @@ const Missions = () => {
     return <h1>error</h1>;
   }
 
-  console.log(data);
   const ActiveClass =
     "border-r-0 border-b-0 border-t-0 border-l-4 border border-indigo-800 ";
 
@@ -44,7 +43,7 @@ const Missions = () => {
             boxShadow: " 5px 5px 50px 5px #000000",
           }}
         >
-          <div className="col-span-1  black">
+          <div className="col-span-2 sm:col-span-1 black pb-32">
             {!!data &&
               data?.missions?.map(
                 (missionName, i) =>
@@ -64,9 +63,19 @@ const Missions = () => {
                     </div>
                   )
               )}
+            {/* <div className=" mb-8 mt-24">
+              <a
+                className="primaryGradientBtn font-semibold py-2  ml-4 px-3 "
+                style={{ fontSize: "13px" }}
+                target="__blank"
+                // href={``}
+              >
+                Website
+              </a>
+            </div> */}
           </div>
 
-          <div className="col-span-4 bg-gray-900 p-8">
+          <div className="col-span-3 sm:col-span-4 bg-gray-900 p-8">
             <div>
               <Mission missionId={missionId} />
             </div>

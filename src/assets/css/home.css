@@ -10,3 +10,20 @@
   background-color: #080808;
   transition: 0.5s;
 }
+/* background fluid */
+.backgroundFluidDiv {
+  z-index: -100;
+}
+.a {
+  fill: #1a202c;
+  opacity: 0.42;
+  z-index: -100;
+}
+
+/* rockets */
+.multi-line-truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

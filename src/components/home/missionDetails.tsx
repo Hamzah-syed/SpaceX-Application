@@ -53,13 +53,15 @@ const Mission: React.FC<props> = ({ missionId }) => {
           {/* <img src={Wikipidia} alt="wikipidia icon" /> */}
         </div>
       </div>
-      <a
-        className="primaryGradientBtn font-semibold py-2 px-6 "
-        target="__blank"
-        href={`${data?.mission?.website}`}
-      >
-        Website
-      </a>
+      <div className="mb-10">
+        <a
+          className="primaryGradientBtn font-semibold py-2  px-6 "
+          target="__blank"
+          href={`${data?.mission?.website}`}
+        >
+          Website
+        </a>
+      </div>
     </div>
   );
 };
