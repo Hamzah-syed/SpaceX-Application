@@ -70,7 +70,11 @@ const LaunchesCards = () => {
                 className="sm:col-span-12 col-span-12 rounded bg-gray-900 mb-8"
               >
                 <div className="  ">
-                  <div className="" style={{ height: "350px" }}>
+                  <div className="relative" style={{ height: "350px" }}>
+                    <div
+                      className="w-full primaryGradient absolute rounded-t opacity-25"
+                      style={{ height: "350px" }}
+                    ></div>
                     <img
                       src={(
                         !!launches.links?.flickr_images &&
