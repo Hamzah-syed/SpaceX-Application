@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const launches = gql`
-  query launches {
-    launches {
+  query launches($order: Order!, $sort: String!, $limit: Int, $offset: Int) {
+    launches(order: $order, sort: $sort, limit: $limit, offset: $offset) {
       mission_id
       mission_name
       details
@@ -17,6 +17,7 @@ export const launches = gql`
         video_link
         article_link
         wikipedia
+        flickr_images
       }
     }
   }

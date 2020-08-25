@@ -779,7 +779,12 @@ export type RocketsQuery = (
   )>>> }
 );
 
-export type LaunchesQueryVariables = Exact<{ [key: string]: never; }>;
+export type LaunchesQueryVariables = Exact<{
+  order: Order;
+  sort: Scalars['String'];
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+}>;
 
 
 export type LaunchesQuery = (
@@ -792,7 +797,7 @@ export type LaunchesQuery = (
       & Pick<LaunchSite, 'site_name'>
     )>, links?: Maybe<(
       { __typename?: 'LaunchLinks' }
-      & Pick<LaunchLinks, 'video_link' | 'article_link' | 'wikipedia'>
+      & Pick<LaunchLinks, 'video_link' | 'article_link' | 'wikipedia' | 'flickr_images'>
     )> }
   )>>> }
 );
@@ -937,8 +942,8 @@ export type RocketsQueryHookResult = ReturnType<typeof useRocketsQuery>;
 export type RocketsLazyQueryHookResult = ReturnType<typeof useRocketsLazyQuery>;
 export type RocketsQueryResult = Apollo.QueryResult<RocketsQuery, RocketsQueryVariables>;
 export const LaunchesDocument = gql`
-    query launches {
-  launches {
+    query launches($order: Order!, $sort: String!, $limit: Int, $offset: Int) {
+  launches(order: $order, sort: $sort, limit: $limit, offset: $offset) {
     mission_id
     mission_name
     details
@@ -951,6 +956,7 @@ export const LaunchesDocument = gql`
       video_link
       article_link
       wikipedia
+      flickr_images
     }
   }
 }
@@ -968,6 +974,10 @@ export const LaunchesDocument = gql`
  * @example
  * const { data, loading, error } = useLaunchesQuery({
  *   variables: {
+ *      order: // value for 'order'
+ *      sort: // value for 'sort'
+ *      limit: // value for 'limit'
+ *      offset: // value for 'offset'
  *   },
  * });
  */

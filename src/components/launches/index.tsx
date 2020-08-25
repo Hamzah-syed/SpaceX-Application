@@ -1,15 +1,14 @@
 import React from "react";
 //component
 import LandingSec from "./landingSec";
-import LaunchesCards from "./launchesCards";
-import Demo from "./demo";
+import LaunchesContent from "./launchesContent";
 
 const Launches = () => {
   return (
     <div>
       <LandingSec />
-      <Demo />
-      <LaunchesCards />
+
+      <LaunchesContent />
     </div>
   );
 };
