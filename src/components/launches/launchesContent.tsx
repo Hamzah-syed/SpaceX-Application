@@ -1,5 +1,6 @@
 import React from "react";
 import LaunchesCards from "./launchesCards";
+import BlogSidebar from "../Blogsidebar/index";
 
 const LaunchesContent = () => {
   return (
@@ -10,8 +11,8 @@ const LaunchesContent = () => {
             <LaunchesCards />
           </div>
           <div className="md:col-span-4 col-span-12 gap-2">
-            <div className="bg-gray-900">
-              <h1>hamzah</h1>
+            <div className="bg-gray-900 rounded">
+              <BlogSidebar />
             </div>
           </div>
         </div>

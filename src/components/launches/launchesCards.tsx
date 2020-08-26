@@ -17,7 +17,7 @@ const LaunchesCards = () => {
   //since order is type of Order! so i took variable to asign desc value
   const order: any = "desc";
 
-  const { loading, error, data, fetchMore, updateQuery } = useLaunchesQuery({
+  const { loading, error, data, fetchMore } = useLaunchesQuery({
     variables: {
       order: order,
       sort: "launch_date_local",
@@ -113,7 +113,7 @@ const LaunchesCards = () => {
                           }
 `}
                         >
-                          {launches.launch_success ? "Successfull" : "Failded"}
+                          {launches.launch_success ? "Successfull" : "Failed"}
                         </span>
                       </p>
                     </div>

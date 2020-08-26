@@ -2,7 +2,7 @@ import React from "react";
 
 const Cards2Loader = () => {
   return (
-    <div className="customContainer sectionPadding col-span-12 w-full">
+    <div className="customContainer col-span-12 w-full">
       <div className="grid grid-cols-12 gap-3 ">
         <div className="  col-span-12 rounded-md shadow-lg bg-gray-900">
           <div className="animate-pulse  space-x-4">

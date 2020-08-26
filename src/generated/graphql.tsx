@@ -733,6 +733,25 @@ export enum CacheControlScope {
 }
 
 
+export type HistoryDataQueryVariables = Exact<{
+  limit: Scalars['Int'];
+  sort: Scalars['String'];
+  order: Order;
+}>;
+
+
+export type HistoryDataQuery = (
+  { __typename?: 'Query' }
+  & { history?: Maybe<Array<Maybe<(
+    { __typename?: 'History' }
+    & Pick<History, 'title' | 'details' | 'event_date_utc'>
+    & { links?: Maybe<(
+      { __typename?: 'HistoryLinks' }
+      & Pick<HistoryLinks, 'article'>
+    )> }
+  )>>> }
+);
+
 export type CompanyInfoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -803,6 +822,46 @@ export type LaunchesQuery = (
 );
 
 
+export const HistoryDataDocument = gql`
+    query HistoryData($limit: Int!, $sort: String!, $order: Order!) {
+  history(limit: $limit, sort: $sort, order: $order) {
+    title
+    details
+    links {
+      article
+    }
+    event_date_utc
+  }
+}
+    `;
+
+/**
+ * __useHistoryDataQuery__
+ *
+ * To run a query within a React component, call `useHistoryDataQuery` and pass it any options that fit your needs.
+ * When your component renders, `useHistoryDataQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useHistoryDataQuery({
+ *   variables: {
+ *      limit: // value for 'limit'
+ *      sort: // value for 'sort'
+ *      order: // value for 'order'
+ *   },
+ * });
+ */
+export function useHistoryDataQuery(baseOptions?: Apollo.QueryHookOptions<HistoryDataQuery, HistoryDataQueryVariables>) {
+        return Apollo.useQuery<HistoryDataQuery, HistoryDataQueryVariables>(HistoryDataDocument, baseOptions);
+      }
+export function useHistoryDataLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<HistoryDataQuery, HistoryDataQueryVariables>) {
+          return Apollo.useLazyQuery<HistoryDataQuery, HistoryDataQueryVariables>(HistoryDataDocument, baseOptions);
+        }
+export type HistoryDataQueryHookResult = ReturnType<typeof useHistoryDataQuery>;
+export type HistoryDataLazyQueryHookResult = ReturnType<typeof useHistoryDataLazyQuery>;
+export type HistoryDataQueryResult = Apollo.QueryResult<HistoryDataQuery, HistoryDataQueryVariables>;
 export const CompanyInfoDocument = gql`
     query companyInfo {
   info {
