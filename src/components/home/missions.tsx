@@ -40,7 +40,7 @@ const Missions = () => {
         <div
           className="grid grid-cols-5  shadow-2xl"
           style={{
-            boxShadow: " 5px 5px 50px 5px #000000",
+            boxShadow: " 0px 0px 10px -10px #000000",
           }}
         >
           <div className="col-span-2 sm:col-span-1 black pb-32">

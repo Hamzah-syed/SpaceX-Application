@@ -21,7 +21,9 @@ const HistoryContent: React.FC<props> = ({
     <div>
       <div className="py-4">
         <div className="pb-4">
-          <h1 className="text-white  text-2xl pt-3 font-semibold">{title}</h1>
+          <h1 className="text-white  text-2xl pt-3 font-semibold" id="title">
+            {title}
+          </h1>
           <h1 className="text-indigo-600">
             {" "}
             {moment(date).format("MMMM Do, YYYY")}
