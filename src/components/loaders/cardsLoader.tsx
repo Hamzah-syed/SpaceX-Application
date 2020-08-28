@@ -14,7 +14,7 @@ const CardsLoader = () => {
                 <div className="mt-4 mb-6">
                   <div className="h-8 bg-gray-800 rounded w-4/12"></div>
                 </div>
-                <div className="h-4 bg-gray-800 rounded w-full my-1"></div>
+                <div className="h-4 bg-gray-800 roundaed w-full my-1"></div>
                 <div className="h-4 bg-gray-800 rounded w-full my-1"></div>
                 <div className="h-4 bg-gray-800 rounded w-6/12 my-1"></div>
 

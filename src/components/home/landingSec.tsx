@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //semantic ui
 
@@ -26,9 +27,11 @@ const LandingSec: React.FC<props> = ({ summary }) => {
               </p>
             </div>
             <div className="flex justify-center my-6">
-              <button className="primaryGradientBtn py-2 px-6 font-semibold">
-                Primary
-              </button>
+              <Link to="/launches">
+                <button className="primaryGradientBtn py-2 px-6 font-semibold">
+                  Launches
+                </button>
+              </Link>
             </div>
           </div>
         </div>

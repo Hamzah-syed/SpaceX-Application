@@ -17,7 +17,7 @@ const History = () => {
   if (error || !data) {
     return <h1 className="text-red-600">Error</h1>;
   }
-  console.log(data.history);
+
   return (
     <div>
       <div className="p-4 px-4 ">
