@@ -5,18 +5,9 @@ import "./assets/css/tailwind.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-// for making app PWA
-
-// const client = new ApolloClient({
-//   uri: "https://spacexdata.herokuapp.com/graphql",
-//   cache: new InMemoryCache(),
-// });
-
 ReactDOM.render(
   <React.StrictMode>
-    {/* <ApolloProvider client={client}> */}
     <App />
-    {/* </ApolloProvider> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

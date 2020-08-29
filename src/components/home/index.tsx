@@ -7,11 +7,13 @@ import Missions from "./missions";
 import Rockets from "./rockets";
 //query
 import { useCompanyInfoQuery } from "../../generated/graphql";
+//loader
+import Loader from "../loaders/Loader";
 
 const Home: React.FC = () => {
   const { data, loading, error } = useCompanyInfoQuery();
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <Loader />;
   }
 
   if (error || !data) {
