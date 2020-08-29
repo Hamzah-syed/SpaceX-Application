@@ -6,7 +6,7 @@ import Logo from "../../assets/images/logo.png";
 const Header = () => {
   return (
     <div className="w-full" style={{ position: "absolute" }}>
-      <header className="text-gray-500 bg-gray-900 body-font w-full">
+      <header className="text-gray-500  body-font w-full">
         <div className="customContainer mx-auto flex flex-wrap p-5 flex-row items-center">
           <span className="flex title-font font-medium items-center text-white  mb-0">
             <img

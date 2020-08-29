@@ -4,7 +4,10 @@ const LandingSec = () => {
   return (
     <div>
       <div className="landingSec">
-        <div className="customContainer  w-full h-64 flex  items-center">
+        <div
+          className="customContainer  w-full  flex items-center"
+          style={{ paddingTop: "30px", height: "350px" }}
+        >
           <div className="grid  grid-cols-1">
             <div className="py-3">
               <h1 className="font-semibold text-5xl text-white text-left">
