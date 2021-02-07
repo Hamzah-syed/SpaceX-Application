@@ -17,21 +17,10 @@ const Footer = () => {
             <span className="ml-3 text-xl">SpaceX</span>
           </span>
           <p className="text-sm text-gray-600 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
-            © 2020 SpaceX —
-            <a
-              className="text-gray-500 ml-1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @Hamzah
-            </a>
+            © 2020 SpaceX —<p className="text-gray-500 ml-1">@Hamzah</p>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600"
-            >
+            <p className="text-gray-600">
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -42,13 +31,9 @@ const Footer = () => {
               >
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
               </svg>
-            </a>
+            </p>
 
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-3 text-gray-600"
-            >
+            <p className="ml-3 text-gray-600">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -61,12 +46,8 @@ const Footer = () => {
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
               </svg>
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-3 text-gray-600"
-            >
+            </p>
+            <p className="ml-3 text-gray-600">
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -82,7 +63,7 @@ const Footer = () => {
                 ></path>
                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
               </svg>
-            </a>
+            </p>
           </span>
         </div>
       </footer>
